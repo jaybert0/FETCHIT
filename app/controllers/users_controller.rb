@@ -57,6 +57,21 @@ class UsersController < ApplicationController
     end
   end
 
+  # def points
+  #     User.all.points.sum
+  # end
+  def points
+    # array = []
+    # array << User.all.map {|user| user.points}
+    # p array
+    users =User.all
+
+point = 0
+
+users.map {|i| point += i.points}
+point
+end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
