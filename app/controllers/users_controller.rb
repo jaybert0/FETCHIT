@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
-
+# WTF IS ALL THIS SERIOUSLY
   # GET /users/1 or /users/1.json
   def show
   end
