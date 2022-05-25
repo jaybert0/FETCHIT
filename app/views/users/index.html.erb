@@ -1,9 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Users</h1>
+<%# <h1>Point Wallet</h1>
+<div>
+
+<% @users.all.pluck(:points).sum do |points| 
+  <%= render @users.all.pluck(:points).sum  %>
+  <%# <% end %>
+<%# </div> %> 
+
+<h1>Transactions</h1>
 
 <div id="users">
-  <% @users.each do |user| %>
+  <% @users.order(:timestamp).each do |user| %>
     <%= render user %>
     <p>
       <%= link_to "Show this user", user %>
@@ -11,5 +19,7 @@
   <% end %>
 </div>
 
+
+
 <%= link_to "New Transaction", new_user_path %></p>
-<%# <%= link_to "Spend Points", spend_path %> %>
+<%= link_to "Spend Points", spend_path %>

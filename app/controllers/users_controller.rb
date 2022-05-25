@@ -61,7 +61,8 @@ class UsersController < ApplicationController
   #     User.all.points.sum
   # end
   def spend
-    @points = params[:points]
+    @users = User.all
+    # @points = params[:points]
   end
 
   private
